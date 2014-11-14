@@ -24,6 +24,9 @@ hotp.gen = function(key, opt) {
 	var counter = opt.counter || 0;
 
 	var p = 6;
+  if (opt.length) {
+    p = opt.length;
+  }
 
 	// Create the byte array
 	var b = new Buffer(intToBytes(counter));
